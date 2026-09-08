@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUIStore } from '../../stores/uiStore';
 import { useCartStore } from '../../stores/cartStore';
-import { useThemeStore } from '../../stores/themeStore';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { mockCategories } from '../../data/mockData';
 
 export function Header() {
   const { scrollY, isMobileMenuOpen, toggleMobileMenu } = useUIStore();
   const { getItemCount } = useCartStore();
-  const { isDark } = useThemeStore();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {

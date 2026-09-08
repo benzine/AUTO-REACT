@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useCartStore, CartItem } from '../../stores/cartStore';
+import { useCartStore } from '../../stores/cartStore';
 
 export function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, getTotal } = useCartStore();

@@ -193,7 +193,7 @@ p {
 
 /* Product Card */
 .product-card {
-  @apply bg-bg-secondary rounded-lg overflow-hidden transition-all duration-300;
+  @apply bg-dark-100 rounded-lg overflow-hidden transition-all duration-300;
   @apply hover:shadow-2xl hover:-translate-y-2;
 }
 
