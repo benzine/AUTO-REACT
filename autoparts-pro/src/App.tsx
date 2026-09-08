@@ -2,7 +2,6 @@ import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ExplodedViewHero } from './components/sections/ExplodedViewHero';
 import { ProductCard } from './components/products/ProductCard';
-import { ThemeToggle } from './components/ui/ThemeToggle';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { BackToTop } from './components/ui/BackToTop';
 import { ChatBot } from './components/ui/ChatBot';

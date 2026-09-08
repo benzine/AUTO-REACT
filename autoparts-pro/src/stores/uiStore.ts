@@ -11,7 +11,7 @@ interface UIState {
   setScrollY: (scrollY: number) => void;
 }
 
-export const useUIStore = create<UIState>((set, get) => ({
+export const useUIStore = create<UIState>((set) => ({
   isMenuOpen: false,
   isMobileMenuOpen: false,
   scrollY: 0,

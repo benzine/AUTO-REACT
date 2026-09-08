@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -32,7 +32,7 @@ function EnginePart({ part, progress }: { part: ExplodedPart; progress: number }
     pos + (part.explodedPosition[i] - pos) * progress
   ) as [number, number, number];
   
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       meshRef.current.position.lerp(
         new THREE.Vector3(...currentPosition),

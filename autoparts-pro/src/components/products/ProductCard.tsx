@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Product } from '../../data/mockData';
+import type { Product } from '../../data/mockData';
 import { useWishlistStore } from '../../stores/wishlistStore';
-import { useCartStore, CartItem } from '../../stores/cartStore';
+import { useCartStore, type CartItem } from '../../stores/cartStore';
 
 interface ProductCardProps {
   product: Product;
