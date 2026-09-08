@@ -1,26 +1,17 @@
 ```
-# WordPress/WooCommerce specific
-wp-content/cache/
-*.log
-*.tmp
-.DS_Store
-Thumbs.db
-
-# PHP related
-*.php~
-*.php.bak
-*.bak
-
-# Web artifacts
-*.min.js
-*.min.css
-*.map
+# Dependencies
 node_modules/
+
+# Build artifacts
+dist/
+build/
+*.js.map
+*.tsbuildinfo
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Editors
 .vscode/
@@ -28,11 +19,22 @@ node_modules/
 *.swp
 *.swo
 
-# Dependencies
-vendor/
-composer.lock
+# Logs and temp files
+*.log
+*.tmp
 
-# Build/Cache directories
-cache/
-tmp/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# OS
+.DS_Store
+Thumbs.db
 ```
