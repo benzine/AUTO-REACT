@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AutoParts Pro - Premium Automotive Theme */
+
+/* CSS Custom Properties for Dynamic Theming */
+:root {
+  /* Colors - Light Mode Default */
+  --color-primary: #DC2626;
+  --color-primary-fg: #FFFFFF;
+  --color-dark: #0A0A0A;
+  --color-dark-100: #141414;
+  --color-dark-200: #1E1E1E;
+  --color-charcoal: #2D2D2D;
+  --color-steel: #6B7280;
+  --color-white: #FFFFFF;
+  --color-offwhite: #F5F5F5;
+  --color-accent: #EA580C;
+  --color-accent-fg: #FFFFFF;
+  
+  /* Typography */
+  --font-heading: 'Rajdhani', 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Spacing */
+  --section-spacing-cozy: 2rem;
+  --section-spacing-default: 4rem;
+  --section-spacing-airy: 6rem;
+  
+  /* Animation */
+  --animation-speed: 0.5s;
+  --corner-radius: 0.25rem;
+  
+  /* Features */
+  --custom-cursor-enabled: true;
+  --film-grain-enabled: false;
+  --site-motion-enabled: true;
+}
+
+/* Dark Mode */
+.dark {
+  --color-bg-primary: var(--color-dark);
+  --color-bg-secondary: var(--color-dark-100);
+  --color-bg-tertiary: var(--color-charcoal);
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-steel);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Mode */
+:not(.dark) {
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-offwhite);
+  --color-bg-tertiary: #E5E7EB;
+  --color-text-primary: var(--color-dark);
+  --color-text-secondary: var(--color-steel);
+  --color-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color var(--animation-speed) ease, color var(--animation-speed) ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cursor - Engineering Blueprint Crosshair */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: crosshair;
+  }
+  
+  .cursor-pointer, 
+  button, 
+  a, 
+  [role="button"] {
+    cursor: crosshair;
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Mechanical Grid Pattern Background */
+.mechanical-grid {
+  background-image: 
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  background-position: center center;
+}
+
+/* Carbon Fiber Texture */
+.carbon-fiber {
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  background-color: var(--color-charcoal);
+}
+
+/* Brushed Metal Effect */
+.brushed-metal {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  background-color: var(--color-steel);
+}
+
+/* Glass/Blur Effect */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.8);
+}
+
+.dark .glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Button Styles - Mechanical Feel */
+.btn-primary {
+  @apply bg-primary text-white font-heading font-bold py-3 px-6 uppercase tracking-wider;
+  @apply transform transition-all duration-300 ease-out;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-primary:hover {
+  @apply bg-red-700 scale-105;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-primary text-primary font-heading font-bold py-3 px-6 uppercase tracking-wider;
+  @apply transform transition-all duration-300 ease-out;
+}
+
+.btn-secondary:hover {
+  @apply bg-primary text-white;
+}
+
+/* Product Card */
+.product-card {
+  @apply bg-bg-secondary rounded-lg overflow-hidden transition-all duration-300;
+  @apply hover:shadow-2xl hover:-translate-y-2;
+}
+
+/* Gear Animation */
+@keyframes gear-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gear-animation {
+  animation: gear-rotate 10s linear infinite;
+}
+
+/* Spark Particle Animation */
+@keyframes spark {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.spark {
+  animation: spark 0.3s ease-out forwards;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B91C1C;
+}
+
+/* Focus States for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-padding {
+  padding-top: var(--section-spacing-default);
+  padding-bottom: var(--section-spacing-default);
+}
+
+.section-padding-cozy {
+  padding-top: var(--section-spacing-cozy);
+  padding-bottom: var(--section-spacing-cozy);
+}
+
+.section-padding-airy {
+  padding-top: var(--section-spacing-airy);
+  padding-bottom: var(--section-spacing-airy);
+}
