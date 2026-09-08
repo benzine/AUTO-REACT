@@ -1,40 +1,28 @@
 ```
-# Dependencies
-node_modules/
+# WordPress/WooCommerce specific ignores
+wp-content/cache/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
 
-# Build artifacts
-dist/
-build/
-*.js.map
-*.tsbuildinfo
-
-# Environment
+# Environment and local config
 .env
 .env.local
-*.env.*
+.env.*
 
-# Editors
+# Editor/IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Logs and temp files
-*.log
-*.tmp
+# Dependencies (if any)
+node_modules/
+vendor/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Coverage
-coverage/
-htmlcov/
-.coverage
-
-# OS
-.DS_Store
-Thumbs.db
+# Build artifacts
+*.min.js
+*.min.css
+*.map
 ```
